@@ -1,6 +1,66 @@
+https://github.com/avamsykiran/ReactForADM.git
+
 Environental Setup
 ------------------------------
-
         NODE JS
-        Visual Code
-        
+        Visual Studio Code
+
+NODE
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+        Node  is a javascript execution environment (javascript runtime).
+
+        NPM   Node Package Maanger  
+
+                is a kind of a build tool
+                + tracking you dependencies
+                + can install the dependencies into your node project.
+                + manage your project as well
+                                creating
+                                test
+                                start
+                                build
+
+
+        up on node
+                        create a javascrrpt based server side application
+
+                                express js
+
+                        single page applications (SPA)
+                                
+                                Angular
+                                React JS
+                                Vue JS
+
+        creating a node project using npm
+        ------------------------------------------
+
+                npm init
+                npm init -y
+
+
+        install a node package
+        -------------------------------------------
+
+                global installation
+
+                        npm install -g package-name                        
+
+                project wise installation
+
+                        npm install package-name --save
+                        
+                        npm install package-name --dev-save
+
+
+        ReactJS
+        ------------------------------------------------------------
+
+                is a javacript SPA library.
+
+                npx create-react-app react-proj-name
+
+                
+
+
