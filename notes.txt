@@ -51,7 +51,7 @@ NODE
 
                         npm install package-name --save
                         
-                        npm install package-name --dev-save
+                        npm install package-name --save-dev
 
 
         ReactJS
@@ -59,8 +59,189 @@ NODE
 
                 is a javacript SPA library.
 
+                npm install -g create-react-app
+                create-react-app react-project-name
+
+                (or)
+
                 npx create-react-app react-proj-name
 
+
+        Component:
+                        SPA has only one page = a collection of
+                        interchagnable smart units that are
+                        called components.
+
+                        HTML -  DOM     Document Object Model
+                        ----------------------------------------
+
+                        <html>
+                                <head>
+                                        <title></title>
+                                </head>
+                                <body>
+                                      <MainComponent >  
+                                        <Header />
+                                        <CustomrApplicationForm />
+                                        <Footer />
+                                      </MainComponent>
+                                </body>
+                        </html>
+
+                        shadow dom
+                        -------------------
+                        [html]
+                          |
+                          |-head        
+                          |   |-title
+                          |
+                          |-body
+                             |-MainComponent
+                                |-Header
+                                |-CustomrApplicationForm
+                                |-Footer
+
+                        actual DOM
+                        -------------
+
+                        [html]
+                          |
+                          |-head        
+                          |   |-title
+                          |
+                          |-body
+                             |-<section id="">
+                                |-<header></header>
+                                |-<form></form>
+                                |-<footer></footer>
+                               </section>
+                           
                 
+        ReactJS components
+        -----------------------------------------------
+
+        Component = renderer + state + props + behaveoural_code
+
+                renderer  = whtat ahs to appear on behalf of this Component
+
+                state = is the data assosiated with the Component
+
+                props =  are attributes used on the Component,
+                        mostly used by a parent Component to share data with
+                        a child Component
+
+                behaveoural_code = all the event handling, life cycle method ..etc all code
+
+        types of react js components
+        ---------------------------------------
+                Class Components
+
+                        class MainComponent extends React.Component {
+                                
+                                constructor(props){
+                                  //state instialization
+                                }
+
+                                render(){
+                                  return (
+                                        <section>
+                                          <Header>  </header>
+                                          <CustomrApplicationForm></CustomrApplicationForm>
+                                          <Footer>  </Footer> 
+                                        </section>
+                                  );
+                                }
+
+                                //event handlign code
+                                //life cycle code
+                                ........
+                        }
+
+                Functional Components
+
+                        /* a javascript function itself behaves like a component.
+                         * args is props
+                         * returns a JSX element.
+                        */
+
+                        function Header(props){
+                                return (
+                                        <header>
+                                                <h1>....</h1>
+                                                <Banner />
+                                                <NavBar />
+                                        </header>
+                                );
+                        }
+
+                        var Footer = (props) => (
+                                <footer>
+                                        <p>All rights reserved</p>
+                                </footer>
+                        );
 
 
+                Pure Components
+
+                        are thsoe components 
+                                that do not handle or trigger 
+                                chagne 'of state of other components'
+
+                High Order Components (hoc)
+
+                        is a function that accepts
+                        + a component as input
+                        + adds a few more features to it
+                        + and returns it.
+
+
+        JSX  - Java Script eXtension (HTML elements + React Components + javascript code)
+        ------------------------------
+
+                1. all html elements should be scripted in complete lower case
+                
+                <header>
+                </header>
+
+                2. all react components should be scripted in init-caps
+
+                <Header>
+                </Header>
+
+                3. 'class' html attribute is not allowed.
+                        'className' is the alternate for that attribute.
+
+
+        React State is immutable
+        --------------------------------
+
+
+                state can not be editited directly.
+
+                but always the old state must be replaced with a new state.
+
+
+                class StudentForm extends React.Component{
+                        constructor(props){
+                                //state initialization
+                                this.state.student = {studentId:0,fullName:''};
+                        }
+                        render(){
+                                return (
+                                        <form onSubmit="this.handleSubmit()">
+                                                ......
+                                                <button type="submit"></button>
+                                        </form>
+                                );
+                        }
+
+                        handleSubmit = (event) =>{
+                         //modify the values of student
+                         //this.state.student.fullName = someValeu; //this is not possible
+                         let newStudent = Object.assigns(this.state.student);
+                         newStudent.fullName = someValue;
+                         this.setState({student:newStudent});//replacing oldState with new
+                        }
+                }
+                
+                1. support change detection faster.
