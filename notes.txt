@@ -245,3 +245,28 @@ NODE
                 }
                 
                 1. support change detection faster.
+
+
+Bootstrap With React
+----------------------------------
+
+1. Using CDN
+
+        in index.html 
+                in the <head></head>
+                include the links and scripts related to 
+                        Bootstrap
+                        JQuery
+                        Popper.js
+
+2. use 'npm install' to install bootstrap,jquery and popper.js 
+        as dependencies                         
+
+        and import the required libs into index.js
+
+3. use prebuild react specific bootstrap libraries like
+        
+        react-bootstrap
+        
+        reactstrap
+
