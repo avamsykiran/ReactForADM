@@ -270,3 +270,83 @@ Bootstrap With React
         
         reactstrap
 
+
+React Component LifeCycle
+--------------------------------------------------------
+
+        While Component Creation and Insertion Into DOM (Mounting)
+
+                constructor()
+                render()
+                componentDidMount()
+
+        While Component Updates (re-renders) due to a change in props/state
+
+                shouldComponentUpdate()
+                render()
+                componentDidUpdate()
+
+        While Component unmounts ..
+
+                componentWillUnmount()
+
+        While Error at the time of rendering...
+
+                componentDidCatch()
+
+        Component Instance Methods
+
+                setState()
+                forceUpdate()
+                
+React Hooks
+--------------------------------------------------------
+
+        Hooks are functions that let you “hook into” React state and lifecycle 
+        features from function components.
+
+        1. Only call Hooks at the top level. 
+        2. Only call Hooks in functional components.
+
+
+        State Hook                     const [count, setCount] = useState(0);
+          
+          equi to setState()
+
+        Effect Hook                     useEffect(() => {
+                                           //task that shall happen
+                                        }); 
+
+          equi to componentDidMount, 
+          componentDidUpdate 
+          and  componentWillUnmount
+
+
+Integrate with REST api
+---------------------------------
+
+        json-server             
+
+                is a rest api generating tool 
+                given a json file, but only
+                for practise or test purpose.
+
+
+        axios
+
+                is a http client library.
+                using this we can make any http
+                request .
+
+                get(url) :Promise
+                post(url,reqeustBody) :Promise
+                put(url,reqeustBody) :Promise
+                delete(url) :Promise
+                patch(url,reqeustBody) :Promise
+
+                let p = axios.get('http://localhost:8989/todos');
+
+                p.then(
+                  (data) => {...}, //called on sucessful execution
+                  (error) => {....}  //called on errorsome execution
+                );

@@ -3,8 +3,14 @@ import { useState } from "react";
 const ToDoAddView = (props) => {
     const [todo, setTodo] = useState({ id: 0, task: '', isDone: false });
 
+    const formSubmited = e => {
+        e.preventDefault();
+        props.addTask(todo);
+        setTodo({ id: 0, task: '', isDone: false });
+    };
+
     return (
-        <form className="row p-2">
+        <form className="row p-2" onSubmit={formSubmited}>
             <div className="col-sm-1">
                 <input type="text" value={todo.id} className="form-control"
                     onChange={e => setTodo({ ...todo, id: e.target.value })}

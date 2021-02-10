@@ -40,6 +40,10 @@ class ToDoManager extends React.Component {
         }
     }
 
+    doAddTask = (todo) => {        
+        this.setState({todos:[...this.state.todos,todo]});
+    }
+
     render() {
         return (
             <section className="container-fluid p-4">
@@ -55,7 +59,7 @@ class ToDoManager extends React.Component {
                 </div>
 
                 <div>
-                    <ToDoAddView />
+                    <ToDoAddView addTask={this.doAddTask}/>
                 </div>
 
                 <div class="p-2">

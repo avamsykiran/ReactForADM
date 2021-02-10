@@ -1,5 +1,5 @@
 const Header = (props) =>(
-    <header className="jumbotron">
+    <header className="jumbotron mb-0">
         <h1>{props.title}</h1>
     </header>
 );
