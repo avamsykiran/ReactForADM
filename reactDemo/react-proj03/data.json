@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Printer B&W Catridge",
+      "price": 456
+    },
+    {
+      "id": 2,
+      "title": "Printer Color Catridge",
+      "price": 956
+    },
+    {
+      "id": 3,
+      "title": "A4 Sheets Box",
+      "price": 256
+    },
+    {
+      "id": 4,
+      "title": "A5 Sheets Box",
+      "price": 756
+    }
+  ]
+}
