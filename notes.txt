@@ -350,3 +350,80 @@ Integrate with REST api
                   (data) => {...}, //called on sucessful execution
                   (error) => {....}  //called on errorsome execution
                 );
+
+Routing
+--------------------------------------------------------
+
+        react-router
+
+                        <Redirect to="" />
+
+                        navigating programatically
+
+        react-router-dom
+
+                        BrowserRouter as Router
+                        Route
+                        Switch
+                        Link
+
+
+                        <Router>
+                                <CommponnetThatCommonlyAppera />
+
+                                <Switch>
+                                        <Route path="/" exact><Component1 /></Route>
+                                        <Route path="/about" component={component2} />
+                                        <Route path="/edit/:id" component={component2} />
+                                </Switch>                                
+                        </Router>
+
+                        <Link to="about">Link Text</Link>
+
+                        props.match.params.id  gives access to the Route PArams.
+
+Redux
+---------------------------------------------------------
+
+                is a centralized immutable state management
+                library.
+
+                STORE
+
+                        is the centralized repository of data.
+                        All application state is held by a store.
+
+                        typically, but neccassacrily, we will have
+                        one store fro one application.
+
+                REDUCER
+
+                        is a pure function, that processes the data
+                        each time a action is dispatched.
+
+                        will receive the older state as input and an action
+                        makes changes in line with the given action to the given state
+                        and returns the new state.
+
+                ACTION
+
+                        an action typically represents an operation.
+
+                        an action has two main parts
+                                type            is the naem of the operation
+                                payload         data required to perform the operation
+
+                        let action = {
+                                        type:"DELETE",
+                                        itemId:5
+                                     };
+
+                        let action = {
+                                        type:"ADD",
+                                        item:{id:5,title:'Pens Box',price:66}
+                                     };         
+
+                DISPATCHER                                                                 
+
+                        is the one who carries an action
+                        from a react component to a reducer.

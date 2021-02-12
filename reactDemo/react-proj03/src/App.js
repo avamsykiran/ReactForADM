@@ -14,6 +14,7 @@ function App() {
         <Route path="/add">
           <ItemForm />
         </Route>
+        <Route path="/edit/:id" component={ItemForm} />          
       </Switch>
     </Router>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import itemService from '../service/ItemService';
+import {Link} from 'react-router-dom';
 
 class ItemsList extends React.Component {
     constructor(props) {
@@ -10,16 +11,34 @@ class ItemsList extends React.Component {
         };
     }
 
-    componentDidMount(){
+    componentDidMount() {
+        this.loadData();
+    }
+
+    loadData = () => {
         itemService.getAll().then(
             (response) => {
-                this.setState({items:response.data});
+                this.setState({ items: response.data });
             },
             (err) => {
                 console.log(err);
-                this.setState({errMsg:"Sorry, Could not serve the request, please try later"});
+                this.setState({ errMsg: "Sorry, Could not serve the request, please try later" });
             }
         );
+    }
+
+    delete = (id) => {
+        if (window.confirm(`Are you sure to delte item#${id}`)) {
+            itemService.remove(id).then(
+                (response) => {
+                    this.loadData();
+                },
+                (err) => {
+                    console.log(err);
+                    this.setState({ errMsg: "Sorry, Could not serve the request, please try later" });
+                }
+            );
+        }
     }
 
     render() {
@@ -32,15 +51,25 @@ class ItemsList extends React.Component {
                         <th>Item#</th>
                         <th>Title</th>
                         <th>Price</th>
+                        <th>Action</th>
                     </thead>
                     <tbody>
                         {this.state.items.map(
-                            (item) =>  (
-                            <tr>
-                                <td>{item.id}</td>
-                                <td>{item.title}</td>
-                                <td>{item.price}</td>
-                            </tr>)
+                            (item) => (
+                                <tr>
+                                    <td>{item.id}</td>
+                                    <td>{item.title}</td>
+                                    <td>{item.price}</td>
+                                    <td>
+                                        <Link to={`/edit/${item.id}`} className="btn btn-sm btn-primary mr-2">
+                                            <i className="fa fa-pencil" /> Edit
+                                        </Link>
+                                        <button className="btn btn-sm btn-danger"
+                                            onClick={event => { this.delete(item.id); }}>
+                                            <i className="fa fa-trash" /> Delete
+                                    </button>
+                                    </td>
+                                </tr>)
                         )}
                     </tbody>
                 </table>

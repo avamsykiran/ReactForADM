@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "Printer B&W Catridge",
-      "price": 456
+      "price": "256"
     },
     {
       "id": 2,
@@ -13,12 +13,17 @@
     {
       "id": 3,
       "title": "A4 Sheets Box",
-      "price": 256
+      "price": "345"
     },
     {
       "id": 4,
       "title": "A5 Sheets Box",
       "price": 756
+    },
+    {
+      "id": "5",
+      "title": "InkJet Catridge",
+      "price": "765"
     }
   ]
 }
