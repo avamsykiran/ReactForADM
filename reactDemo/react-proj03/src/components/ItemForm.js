@@ -88,7 +88,7 @@ class ItemForm extends React.Component {
                                 <label className="form-control-label">Item Id:</label>
                                 <input type="number" value={item.id} className="form-control"
                                     name="id" onChange={this.handlechange}
-                                    readonly={this.state.isEditing?'readonly':''} />
+                                    readOnly={this.state.isEditing} />
                             </div>
                             <div className="form-group">
                                 <label className="form-control-label">Item Title:</label>

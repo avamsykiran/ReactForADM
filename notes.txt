@@ -427,3 +427,32 @@ Redux
 
                         is the one who carries an action
                         from a react component to a reducer.
+
+
+        redux
+                   
+                        let myStore = createStore(reducer);        
+
+        react-redux
+
+                        <Provider store={myStore}>
+                                .......
+                        </Provider>
+
+                        let myHOC = connect();  //creates a high order component
+
+                        //export default TaskList;
+                        export default myHOC(TaskList); 
+                                //HOC will add the state as props to TaskList
+                                //so that the task list can access the data in the state as props.
+                                //also provides a dispatch function in the props
+                                //to request an action from the component.
+
+
+                        connct function accepts an optional 
+                        funcation "mapStateToProps" as an argument
+
+
+                        let hoc = connect((state)=>{students:[...state.students]});
+
+                        export default hoc(StudentsList);

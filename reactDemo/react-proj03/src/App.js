@@ -11,9 +11,7 @@ function App() {
         <Route exact path="/">
           <ItemsList />
         </Route>
-        <Route path="/add">
-          <ItemForm />
-        </Route>
+        <Route path="/add" component={ItemForm} />          
         <Route path="/edit/:id" component={ItemForm} />          
       </Switch>
     </Router>
