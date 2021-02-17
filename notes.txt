@@ -456,3 +456,33 @@ Redux
                         let hoc = connect((state)=>{students:[...state.students]});
 
                         export default hoc(StudentsList);
+
+        Redux-Thunk
+        -------------------------------------------------------------
+
+                thunk: is a function that can return another function.
+
+                let x=1+2; //1+2 happend immediatly
+
+                let x = ()=> 1+2;//1+2 happens only if x() is called. 
+                                        thus delayed until required.
+
+
+            component ---dispatches an action ----> reducer
+
+
+            Redux-Thunk is a middle ware that acts between a component and a reducer.
+            And the reduxThunk action creators will perform the async operations...
+
+
+            component ---dispatch  Redux-Thunk operation(async)         
+                                        1. operation started            
+                                                ---dispatch wait action ---------> reducer
+                                        2. operation successfully completed
+                                                ---dispatch completed with data ---> reducer
+                                        3. operation aborted with err
+                                                ---dispatch error ------> reducer
+
+
+
+

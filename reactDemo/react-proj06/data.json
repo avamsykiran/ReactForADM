@@ -1,0 +1,9 @@
+{
+    "todos": [
+        { "id": 101, "task": "Upgrade Credit Limit", "isDone": false },
+        { "id": 102, "task": "Recharge DTH", "isDone": true },
+        { "id": 103, "task": "Apply for Address Change", "isDone": false },
+        { "id": 104, "task": "Register Address on Aadhar", "isDone": true },
+        { "id": 105, "task": "Purchase BMTC Pass", "isDone": false }
+    ]
+}
