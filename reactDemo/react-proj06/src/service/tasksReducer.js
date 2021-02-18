@@ -10,18 +10,19 @@ const taskReducer = (oldState = initialState(),action) => {
     let modifiedState = null;
     
     let todos=null;
+    let todo=null;
     let taskId=null;
 
     switch(action.type){
         case LOAD_TODOS:
-            let todos = action.payload;
+            todos = action.payload;
             todos.forEach(element => {
                 element.isEditing=false;
             });
             modifiedState = {...oldState,todos:todos,isLoading:false,error:null};
             break;
         case ADD_TASK:
-            let todo = action.payload;
+            todo = action.payload;
             todos = [...oldState.todos,todo];
             modifiedState = {...oldState,todos:todos,isLoading:false,error:null};
             break;       
@@ -40,7 +41,8 @@ const taskReducer = (oldState = initialState(),action) => {
             modifiedState = {...oldState,todos:todos};
             break;
         case MODIFY_TASK:
-            let todo = action.payload;                        
+            todo = action.payload;
+            todo.isEditing=false;                        
             todos = oldState.todos.map(
                 t => t.id==todo.id?todo:t
             );

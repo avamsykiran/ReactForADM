@@ -67,7 +67,6 @@ export const toggleStatus = (todo) =>{
     return updateTodo(todo);
 };
 
-export const changeTask = (todo,task) =>{
-    todo.task=task;
+export const changeTask = (todo) =>{    
     return updateTodo(todo);
 };

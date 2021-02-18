@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { connect } from 'react-redux';
-import { ADD_TASK } from "../service/actions";
+import { addTodo } from '../service/thunkActions';
 
 const ToDoAddView = (props) => {
     const [todo, setTodo] = useState({ id: 0, task: '', isDone: false });
@@ -35,10 +35,7 @@ const ToDoAddView = (props) => {
 const mapStateToProps = null;
 const mapDispatchToProps = (dispatch) => ({
     addTodo : (todo) => {
-        dispatch({
-            type:ADD_TASK,
-            payload:todo
-        });
+        dispatch(addTodo(todo));
     }
 });
 

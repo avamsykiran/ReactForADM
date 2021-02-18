@@ -1,9 +1,36 @@
 {
-    "todos": [
-        { "id": 101, "task": "Upgrade Credit Limit", "isDone": false },
-        { "id": 102, "task": "Recharge DTH", "isDone": true },
-        { "id": 103, "task": "Apply for Address Change", "isDone": false },
-        { "id": 104, "task": "Register Address on Aadhar", "isDone": true },
-        { "id": 105, "task": "Purchase BMTC Pass", "isDone": false }
-    ]
+  "todos": [
+    {
+      "id": 101,
+      "task": "Upgrade Credit Limit",
+      "isDone": false,
+      "isEditing": false
+    },
+    {
+      "id": 102,
+      "task": "Recharge D-to-H",
+      "isDone": true,
+      "isEditing": true
+    },
+    {
+      "id": 103,
+      "task": "Apply for Address Change",
+      "isDone": false
+    },
+    {
+      "id": 104,
+      "task": "Register Address on Aadhar",
+      "isDone": true
+    },
+    {
+      "id": 105,
+      "task": "Purchase BMTC Pass",
+      "isDone": false
+    },
+    {
+      "id": "201",
+      "task": "Redux Thunk Integration",
+      "isDone": false
+    }
+  ]
 }

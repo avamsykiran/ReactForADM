@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { connect } from "react-redux";
-import { UNMARK_EDIT,MODIFY_TASK,TOGGLE_STATUS } from '../service/actions';
+import { toggleStatus,changeTask } from '../service/thunkActions';
+import { UNMARK_EDIT } from '../service/actions';
 
 const ToDoEditView = (props) => {
     const [todo, setTodo] = useState({...props.todo});
@@ -26,7 +27,7 @@ const ToDoEditView = (props) => {
                 </div>
             </div>
             <div className="col-sm-2">
-                <button className="btn btn-primary " onClick={e => props.toggleStatus(todo.id)}>
+                <button className="btn btn-primary " onClick={e => props.toggleStatus(todo)}>
                     {props.todo.isDone ?
                         <span><i className="fa fa-check-square-o" /> Done</span> :
                         <span><i className="fa fa-square-o" /> Doing</span>
@@ -42,10 +43,7 @@ const mapStateToProps = null;
 
 const mapDispatchToProps = (dispatch) => ({
     change: (todo) =>{
-        dispatch({
-            type:MODIFY_TASK,
-            payload:{...todo,isEditing:false}
-        });
+        dispatch(changeTask(todo));
     },
     cancel : (id) => {
         dispatch({
@@ -53,11 +51,8 @@ const mapDispatchToProps = (dispatch) => ({
             payload:id
         });
     },
-    toggleStatus: (id) => {
-        dispatch({
-            type:TOGGLE_STATUS,
-            payload:id
-        });
+    toggleStatus: (todo) => {
+        dispatch(toggleStatus(todo));
     }
 });
 

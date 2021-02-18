@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { TOGGLE_STATUS, MARK_EDIT } from '../service/actions';
+import { toggleStatus } from '../service/thunkActions';
+import { MARK_EDIT } from '../service/actions';
 
 const ToDoView = (props) =>(
     <div className="row p-2">
@@ -10,7 +11,7 @@ const ToDoView = (props) =>(
             {props.todo.task}
         </div>
         <div className="col-sm-2">
-            <button className="btn btn-primary " onClick={(event) => {props.toggleStatus(props.todo.id);}}>
+            <button className="btn btn-primary " onClick={(event) => {props.toggleStatus(props.todo);}}>
                 {props.todo.isDone?
                     <span><i className="fa fa-check-square-o"/> Done</span>:
                     <span><i className="fa fa-square-o"/> Doing</span>
@@ -29,11 +30,8 @@ const mapDispatchToProps = (dispatch) => ({
             payload:id
         });
     },
-    toggleStatus: (id) => {
-        dispatch({
-            type:TOGGLE_STATUS,
-            payload:id
-        });
+    toggleStatus: (todo) => {
+        dispatch(toggleStatus(todo));
     }
 });
 
